@@ -1,0 +1,72 @@
+# -*- coding: utf-8 -*-
+import unittest
+from xmlrunner import XMLTestRunner
+from NewTvTesting.Utils import createAndGetXmlDirPath, writeTsSummaryToFiles
+from OPL_Testing.TC_3629_T014552_Change_subtitle_on_a_VOD import TC_3629_T014552_Change_subtitle_on_a_VOD
+from OPL_Testing.TC_3510_Auto_T014650_Standby_STB import TC_3510_Auto_T014650_Standby_STB
+from OPL_Testing.TC_18684_RFC_2904_interactive_banners_fast_shifting_mosaic_pages import TC_18684_RFC_2904_interactive_banners_fast_shifting_mosaic_pages
+from OPL_Testing.TC_3342_T014473_modify_confidential_code_error_with_new_code_confirmation import TC_3342_T014473_modify_confidential_code_error_with_new_code_confirmation
+from OPL_Testing.TC_2998_T014426_use_timeshift_on_allowed_program_update import TC_2998_T014426_use_timeshift_on_allowed_program_update
+from OPL_Testing.TC_3338_T014467_modify_adult_code_error_with_new_code_confirmation import TC_3338_T014467_modify_adult_code_error_with_new_code_confirmation
+from OPL_Testing.TC_3341_T014472_modify_confidential_code_set_it_to_code_to_0000 import TC_3341_T014472_modify_confidential_code_set_it_to_code_to_0000
+from OPL_Testing.TC_9691_T016946_Use_the_Time_Shifting_session_and_stop_the_session_by_using_STOP_key import TC_9691_T016946_Use_the_Time_Shifting_session_and_stop_the_session_by_using_STOP_key
+from OPL_Testing.TC_3703_T014776_watch_a_no_rented_vod import TC_3703_T014776_watch_a_no_rented_vod
+from OPL_Testing.TC_3646_T015101_video_consult_similar_reco_associated_to_a_regular_vod_at_the_end_of_video import TC_3646_T015101_video_consult_similar_reco_associated_to_a_regular_vod_at_the_end_of_video
+from OPL_Testing.TC_3337_T014466_modify_adult_code_set_it_to_code_to_0000 import TC_3337_T014466_modify_adult_code_set_it_to_code_to_0000
+from OPL_Testing.TC_3621_T015968_stop_and_resume_vod_electrical_reboot import TC_3621_T015968_stop_and_resume_vod_electrical_reboot
+from OPL_Testing.TC_3456_T015815_sound_level_on_vod_start import TC_3456_T015815_sound_level_on_vod_start
+from OPL_Testing.TC_3340_T014471_modify_confidential_code_wrong_current_code import TC_3340_T014471_modify_confidential_code_wrong_current_code
+from OPL_Testing.TC_9693_T016948_use_time_shifting_pause_more_than_max_duration_stop_TS_buffer import TC_9693_T016948_use_time_shifting_pause_more_than_max_duration_stop_TS_buffer
+from OPL_Testing.TC_3420_T015654_Reload_prepaid_account_payment_control_activated import TC_3420_T015654_Reload_prepaid_account_payment_control_activated
+from OPL_Testing.TC_9638_T015566_Navigate_Intu_EPG_Favourite_Grid import TC_9638_T015566_Navigate_Intu_EPG_Favourite_Grid
+from OPL_Testing.TC_3609_T014596_Stop_and_resume_rental_VOD_within_VOD_viewing_period import TC_3609_T014596_Stop_and_resume_rental_VOD_within_VOD_viewing_period
+from OPL_Testing.TC_3628_T014551_Change_language_on_a_VOD import TC_3628_T014551_Change_language_on_a_VOD
+from OPL_Testing.TC_3157_T014623_Consult_program_summary_update import TC_3157_T014623_Consult_program_summary_update
+from OPL_Testing.TC_13256_RFC_2659_Title_of_PVR_RC_bottons import TC_13256_RFC_2659_Title_of_PVR_RC_bottons
+from OPL_Testing.TC_9082_T014555_watch_the_trailers_of_a_VOD_IPTV_update import TC_9082_T014555_watch_the_trailers_of_a_VOD_IPTV_update
+from OPL_Testing.TC_3372_Manual_T014518_Reload_prepaid_account_payment_control_not_actived_accept import TC_3372_Manual_T014518_Reload_prepaid_account_payment_control_not_actived_accept
+
+if __name__ == '__main__':
+    suite = unittest.TestSuite()
+    
+    suite.addTest(TC_3629_T014552_Change_subtitle_on_a_VOD("test"))
+    suite.addTest(TC_3510_Auto_T014650_Standby_STB("test"))
+    suite.addTest(TC_18684_RFC_2904_interactive_banners_fast_shifting_mosaic_pages("test"))
+    suite.addTest(TC_3703_T014776_watch_a_no_rented_vod("test"))
+    suite.addTest(TC_3609_T014596_Stop_and_resume_rental_VOD_within_VOD_viewing_period("test"))
+    suite.addTest(TC_3628_T014551_Change_language_on_a_VOD("test"))
+    suite.addTest(TC_3157_T014623_Consult_program_summary_update("test"))
+    suite.addTest(TC_13256_RFC_2659_Title_of_PVR_RC_bottons("test"))
+    suite.addTest(TC_3372_Manual_T014518_Reload_prepaid_account_payment_control_not_actived_accept("test"))
+    suite.addTest(TC_9082_T014555_watch_the_trailers_of_a_VOD_IPTV_update("test"))
+                  
+    '''
+    suite.addTest(TC_2998_T014426_use_timeshift_on_allowed_program_update("test"))
+    suite.addTest(TC_3342_T014473_modify_confidential_code_error_with_new_code_confirmation("test"))
+    suite.addTest(TC_3338_T014467_modify_adult_code_error_with_new_code_confirmation("test"))
+    suite.addTest(TC_3341_T014472_modify_confidential_code_set_it_to_code_to_0000("test"))
+    suite.addTest(TC_9691_T016946_Use_the_Time_Shifting_session_and_stop_the_session_by_using_STOP_key("test"))
+    suite.addTest(TC_3646_T015101_video_consult_similar_reco_associated_to_a_regular_vod_at_the_end_of_video("test"))
+    suite.addTest(TC_3337_T014466_modify_adult_code_set_it_to_code_to_0000("test"))
+    suite.addTest(TC_3621_T015968_stop_and_resume_vod_electrical_reboot("test"))
+    suite.addTest(TC_3456_T015815_sound_level_on_vod_start("test"))
+    suite.addTest(TC_3340_T014471_modify_confidential_code_wrong_current_code("test"))
+    suite.addTest(TC_9693_T016948_use_time_shifting_pause_more_than_max_duration_stop_TS_buffer("test"))
+    suite.addTest(TC_3420_T015654_Reload_prepaid_account_payment_control_activated("test"))
+    suite.addTest(TC_9638_T015566_Navigate_Intu_EPG_Favourite_Grid("test"))
+    '''
+
+
+
+
+
+
+
+
+    runner = XMLTestRunner(createAndGetXmlDirPath())
+    result = runner.run(suite)
+    writeTsSummaryToFiles(result)
+    if not result.wasSuccessful():
+        exit(1)
+    
+    exit()

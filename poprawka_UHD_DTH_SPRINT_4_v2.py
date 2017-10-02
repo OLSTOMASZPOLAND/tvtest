@@ -1,0 +1,47 @@
+# -*- coding: utf-8 -*-
+import unittest
+from xmlrunner import XMLTestRunner
+from NewTvTesting.Utils import createAndGetXmlDirPath, writeTsSummaryToFiles
+from OPL_Testing.TC_3370_T014508_Consult_purchase_history_from_purchase_history import TC_3370_T014508_Consult_purchase_history_from_purchase_history
+from OPL_Testing.TC_18687_TC_18689_TC_18688_RFC_2909d_remove_vod_package_from_moje_wybrane_add_package_to_moje_wybrane import TC_18687_TC_18689_TC_18688_RFC_2909d_remove_vod_package_from_moje_wybrane_add_package_to_moje_wybrane
+from OPL_Testing.TC_3405_Consult_the_legal_notices_from_my_account_my_preferences_in_opt_in import TC_3405_Consult_the_legal_notices_from_my_account_my_preferences_in_opt_in
+from OPL_Testing.TC_3409_T015215_Active_tracking_from_my_account_set_opl_in_parameter import TC_3409_T015215_Active_tracking_from_my_account_set_opl_in_parameter
+from OPL_Testing.TC_3396_T015183_consult_recommendation_implicite_profile_in_opt_in_mode_csa4_5 import TC_3396_T015183_consult_recommendation_implicite_profile_in_opt_in_mode_csa4_5
+from OPL_Testing.TC_3321_T014582_Consult_Wake_up_creen_from_stand_by_mode import TC_3321_T014582_Consult_Wake_up_creen_from_stand_by_mode
+from OPL_Testing.TC_9583_T017247_Awake_from_deep_standby_mode import TC_9583_T017247_Awake_from_deep_standby_mode
+from OPL_Testing.TC_18713_RFC_2904_interactive_banners_selecting_the_right_baner_from_every_row import TC_18713_RFC_2904_interactive_banners_selecting_the_right_baner_from_every_row
+from OPL_Testing.TC_18480_18484_OgladajDttTvNagrywajIpZInstantPVR import TC_18480_18484_OgladajDttTvNagrywajIpZInstantPVR
+from OPL_Testing.TC_18485_18482_OgladajDttTvNagrywajIpZPlanowaniemNagran import TC_18485_18482_OgladajDttTvNagrywajIpZPlanowaniemNagran
+from OPL_Testing.TC_18489_OgladajIpTvNagrywajDttZInstantPVR import TC_18489_OgladajIpTvNagrywajDttZInstantPVR
+from OPL_Testing.TC_18491_18494_OgladajIpTvNagrywajDttZPlanowaniemNagran import TC_18491_18494_OgladajIpTvNagrywajDttZPlanowaniemNagran
+from OPL_Testing.TC_18493_OgladajDttTvNagrywajIpZInstantPvr import TC_18493_OgladajDttTvNagrywajIpZInstantPvr
+from OPL_Testing.TC_9474_T014343_Zap_to__basic_channel_mosaic import TC_9474_T014343_Zap_to__basic_channel_mosaic
+from OPL_Testing.TC_3221_T016765_When_record_is_in_progress_zap_to_another_program import TC_3221_T016765_When_record_is_in_progress_zap_to_another_program
+from OPL_Testing.TC_3368_T014506_consult_prepaid_account import TC_3368_T014506_consult_prepaid_account
+
+if __name__ == '__main__':
+    suite = unittest.TestSuite()
+    suite.addTest(TC_3370_T014508_Consult_purchase_history_from_purchase_history("test"))
+    suite.addTest(TC_18687_TC_18689_TC_18688_RFC_2909d_remove_vod_package_from_moje_wybrane_add_package_to_moje_wybrane("test"))
+    suite.addTest(TC_3405_Consult_the_legal_notices_from_my_account_my_preferences_in_opt_in("test"))
+    suite.addTest(TC_3409_T015215_Active_tracking_from_my_account_set_opl_in_parameter("test"))
+    suite.addTest(TC_3396_T015183_consult_recommendation_implicite_profile_in_opt_in_mode_csa4_5("test"))
+    suite.addTest(TC_3321_T014582_Consult_Wake_up_creen_from_stand_by_mode("test"))
+    suite.addTest(TC_9583_T017247_Awake_from_deep_standby_mode("test"))
+    suite.addTest(TC_18713_RFC_2904_interactive_banners_selecting_the_right_baner_from_every_row("test"))
+    suite.addTest(TC_18480_18484_OgladajDttTvNagrywajIpZInstantPVR("test"))
+    suite.addTest(TC_18485_18482_OgladajDttTvNagrywajIpZPlanowaniemNagran("test"))
+    suite.addTest(TC_18489_OgladajIpTvNagrywajDttZInstantPVR("test"))
+    suite.addTest(TC_18491_18494_OgladajIpTvNagrywajDttZPlanowaniemNagran("test"))
+    suite.addTest(TC_18493_OgladajDttTvNagrywajIpZInstantPvr("test"))
+    suite.addTest(TC_9474_T014343_Zap_to__basic_channel_mosaic("test"))
+    suite.addTest(TC_3221_T016765_When_record_is_in_progress_zap_to_another_program("test"))
+    suite.addTest(TC_3368_T014506_consult_prepaid_account("test"))
+
+    runner = XMLTestRunner(createAndGetXmlDirPath())
+    result = runner.run(suite)
+    writeTsSummaryToFiles(result)
+    if not result.wasSuccessful():
+        exit(1)
+    
+    exit()

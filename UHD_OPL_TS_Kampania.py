@@ -1,0 +1,37 @@
+# -*- coding: utf-8 -*-
+import unittest
+from xmlrunner import XMLTestRunner
+from NewTvTesting.Utils import createAndGetXmlDirPath, writeTsSummaryToFiles
+from OPL_Testing.TC_3370_T014508_Consult_purchase_history_from_purchase_history import TC_3370_T014508_Consult_purchase_history_from_purchase_history
+from OPL_Testing.TC_3696_T014562_watch_a_rental_vod_at_the_end_of_the_rent_process import TC_3696_T014562_watch_a_rental_vod_at_the_end_of_the_rent_process
+from OPL_Testing.TC_3699_T014566_watch_rental_vod_from_the_play_key import TC_3699_T014566_watch_rental_vod_from_the_play_key
+from OPL_Testing.TC_3709_T015722_watch_one_shot_vod_at_the_end_of_rent_process import TC_3709_T015722_watch_one_shot_vod_at_the_end_of_rent_process
+from OPL_Testing.TC_3405_Consult_the_legal_notices_from_my_account_my_preferences_in_opt_in import TC_3405_Consult_the_legal_notices_from_my_account_my_preferences_in_opt_in
+from OPL_Testing.TC_3409_T015215_Active_tracking_from_my_account_set_opl_in_parameter import TC_3409_T015215_Active_tracking_from_my_account_set_opl_in_parameter
+from OPL_Testing.TC_3396_T015183_consult_recommendation_implicite_profile_in_opt_in_mode_csa4_5 import TC_3396_T015183_consult_recommendation_implicite_profile_in_opt_in_mode_csa4_5
+from OPL_Testing.TC_3464_3468_T015841_sound_level_on_live_access_T015845_sound_level_on_live_zapping import TC_3464_3468_T015841_sound_level_on_live_access_T015845_sound_level_on_live_zapping
+from OPL_Testing.TC_3368_T014506_consult_prepaid_account import TC_3368_T014506_consult_prepaid_account
+from OPL_Testing.TC_9802_T999999_Auto_select_summary_option import TC_9802_T999999_Auto_select_summary_option
+from OPL_Testing.TC_9798_T000000_Auto_Display_and_Use_Zapping_Banner import TC_9798_T000000_Auto_Display_and_Use_Zapping_Banner
+
+if __name__ == '__main__':
+    suite = unittest.TestSuite()
+    suite.addTest(TC_3370_T014508_Consult_purchase_history_from_purchase_history("test"))
+    suite.addTest(TC_3696_T014562_watch_a_rental_vod_at_the_end_of_the_rent_process("test"))
+    suite.addTest(TC_3699_T014566_watch_rental_vod_from_the_play_key("test"))
+    suite.addTest(TC_3709_T015722_watch_one_shot_vod_at_the_end_of_rent_process("test"))
+    suite.addTest(TC_3405_Consult_the_legal_notices_from_my_account_my_preferences_in_opt_in("test"))
+    suite.addTest(TC_3409_T015215_Active_tracking_from_my_account_set_opl_in_parameter("test"))
+    suite.addTest(TC_3396_T015183_consult_recommendation_implicite_profile_in_opt_in_mode_csa4_5("test"))
+    suite.addTest(TC_3464_3468_T015841_sound_level_on_live_access_T015845_sound_level_on_live_zapping("test"))
+    suite.addTest(TC_3368_T014506_consult_prepaid_account("test"))
+    suite.addTest(TC_9802_T999999_Auto_select_summary_option("test"))
+    suite.addTest(TC_9798_T000000_Auto_Display_and_Use_Zapping_Banner("test"))
+
+    runner = XMLTestRunner(createAndGetXmlDirPath())
+    result = runner.run(suite)
+    writeTsSummaryToFiles(result)
+    if not result.wasSuccessful():
+        exit(1)
+    
+    exit()

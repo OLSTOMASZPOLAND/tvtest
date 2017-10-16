@@ -68,7 +68,7 @@ class TC_3442_T016322_Set_the_default_subtitle_none_PVR(TC_OPL_template):
             time.sleep(2)
             self.rc.sendKeys(["KEY_TV"])
             time.sleep(2)
-            self.assertTrue(self.page.zapToChannel(260), " ERR  cannot zap to channel 260")
+            self.assertTrue(self.page.zapToChannel(self.rc.getChannelTVP1HD_dtt), " >> ERR in Zap to TVP1 DTT")
             time.sleep(8)
             self.rc.sendKeys(["KEY_RECORD"])
             time.sleep(15)

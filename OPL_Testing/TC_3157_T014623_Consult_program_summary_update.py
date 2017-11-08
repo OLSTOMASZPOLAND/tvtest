@@ -81,35 +81,36 @@ class TC_3157_T014623_Consult_program_summary_update(TC_OPL_template):
             hourEnd = hourEnd.text.encode('utf-8')
             hourStart = self.page.driver.find_element_by_xpath(".//*[@id='rpitest_pgm_start_time']")
             hourStart = hourStart.text.encode('utf-8')
-            title = self.page.driver.find_element_by_xpath("html/body/div[7]/div[4]/div[5]/div[1]")
+            title = self.page.driver.find_element_by_xpath("html/body/div[8]/div[4]/div[5]/div[1]")
             title = title.text.encode('utf-8') 
-            type = self.page.driver.find_element_by_xpath("html/body/div[7]/div[4]/div[5]/div[2]/div/div[1]")
+            type = self.page.driver.find_element_by_xpath("html/body/div[8]/div[4]/div[5]/div[2]/div/div[1]")
             type = type.text.encode('utf-8')  
-            CountryYear = self.page.driver.find_element_by_xpath("html/body/div[7]/div[4]/div[5]/div[2]/div/div[2]")
+            CountryYear = self.page.driver.find_element_by_xpath("html/body/div[8]/div[4]/div[5]/div[2]/div/div[2]")
             CountryYear = CountryYear.text.encode('utf-8')
-            actors = self.page.driver.find_element_by_xpath("html/body/div[7]/div[4]/div[5]/div[2]/div/div[4]")
+            actors = self.page.driver.find_element_by_xpath("html/body/div[8]/div[4]/div[5]/div[2]/div/div[4]")
             actors = actors.text.encode('utf-8')   
-            summary = self.page.driver.find_element_by_xpath("html/body/div[7]/div[4]/div[5]/div[2]/div/div[5]")
+            summary = self.page.driver.find_element_by_xpath("html/body/div[8]/div[4]/div[5]/div[2]/div/div[5]")
             summary = summary.text.encode('utf-8')          
+            
         except:
             self.assertTrue(False, "ERR: No description on epg")
 
         if (len(day)==0):
-            self.assertFalse(self.page.checkLive(), "ERR: No date of program")
+            self.assertFalse(False, "ERR: No date of program")
         if (len(hourEnd)==0):
-            self.assertFalse(self.page.checkLive(), "ERR: No end time of program")
+            self.assertFalse(False, "ERR: No end time of program")
         if (len(hourStart)==0):
-            self.assertFalse(self.page.checkLive(), "ERR: No start time of program")            
+            self.assertFalse(False, "ERR: No start time of program")            
         if (len(title)==0):
-            self.assertFalse(self.page.checkLive(), "ERR: No title of program")            
+            self.assertFalse(False, "ERR: No title of program")            
         if (len(type)==0):
-            self.assertFalse(self.page.checkLive(), "ERR: No type of program")
+            self.assertFalse(False, "ERR: No type of program")
         if (len(CountryYear)==0):
-            self.assertFalse(self.page.checkLive(), "ERR: No year and caountry of program")            
+            self.assertFalse(False, "ERR: No year and caountry of program")            
         if (len(actors)==0):
-            self.assertFalse(self.page.checkLive(), "ERR: No actors of program")            
+            self.assertFalse(False, "ERR: No actors of program")            
         if (len(summary)==0):
-            self.assertFalse(self.page.checkLive(), "ERR: No summary of program")
+            self.assertFalse(False, "ERR: No summary of program")
         
         self.logger.info("----------- "+day +" -----------")
         self.logger.info("----------- "+hourEnd +" -----------")

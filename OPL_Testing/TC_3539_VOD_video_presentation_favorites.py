@@ -42,13 +42,14 @@ class TC_3539_VOD_video_presentation_favorites(TC_OPL_template):
             time.sleep(2)
             self.page.driver.get(Rpi.DUMP)
             time.sleep(2)
-            
-            element = self.page.driver.find_elements_by_xpath("/html/body/div[7]/div[1]/div[3]/div/div[4]") 
-            element = element[0].text        
-               
+            element = self.page.getList()
+            element = element[3]
+            element = element.text   
+            element = element.encode('utf-8')     
+
             star = self.page.driver.find_elements_by_css_selector(".heart_w")
             
-            if(element.encode('utf-8') == "dodaj do wybranych"):
+            if(element == "dodaj do wybranych"):
                 if(len(star) != 0):
                     self.fail("   ERR   Heart displays when it should not")
                 else:
@@ -60,7 +61,7 @@ class TC_3539_VOD_video_presentation_favorites(TC_OPL_template):
                     if(len(star) != 1):
                         self.fail("   ERR   Heart doesn't display")
             else:
-                if(element.encode('utf-8') == "usuń z wybranych"):
+                if(element == "usuń z wybranych"):
                     if(len(star) != 1):
                         self.fail("   ERR   Heart doesn't display")
                     else:
